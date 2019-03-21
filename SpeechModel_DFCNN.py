@@ -22,15 +22,17 @@ from keras.optimizers import SGD, Adadelta, Adam, RMSprop
 
 from read_data_aishell import DataSpeech
 #from old_read_data import DataSpeech
+
 abspath = ''
 f = open('step_dfcnn.txt','r')
 flist = f.readlines()
 f.close()
 fstr = "".join(flist)
+
 #ModelName='_DFCNN'
 ModelName='_dfcnn'
 base_count=int(fstr.split('_')[-1])
-#base_count=0
+base_count=0
 #NUM_GPU = 2
 
 class ModelSpeech(): # 语音模型类
