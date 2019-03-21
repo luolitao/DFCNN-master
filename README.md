@@ -1,17 +1,16 @@
 # A Deep-Learning-Based Chinese Speech Recognition System
 基于深度学习的中文语音识别系统
 
-[![GPL-3.0 Licensed](https://img.shields.io/badge/License-GPL3.0-blue.svg?style=flat)](https://opensource.org/licenses/GPL-3.0) [![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.4+-blue.svg)](https://www.tensorflow.org/) [![Keras Version](https://img.shields.io/badge/Keras-2.0+-blue.svg)](https://keras.io/) [![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/) 
+[![GPL-3.0 Licensed](https://img.shields.io/badge/License-GPL3.0-blue.svg?style=flat)](https://opensource.org/licenses/GPL-3.0)
+[![TensorFlow Version](https://img.shields.io/badge/Tensorflow-1.4+-blue.svg)](https://www.tensorflow.org/)
+[![Keras Version](https://img.shields.io/badge/Keras-2.0+-blue.svg)](https://keras.io/) 
+[![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/) 
 
-ReadMe Language 中文版 [English](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/README_EN.md) 
-
-[查看本项目的Wiki页面](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki) (正在完善中)
 
 ## Introduction 简介
 
-本项目使用Keras、TensorFlow基于深度卷积神经网络和长短时记忆神经网络、注意力机制以及CTC实现。
+本项目使用Keras、TensorFlow基于DFCNN实现。
 
-This project uses Keras, TensorFlow based on deep convolutional neural network and long-short memory neural network, attention mechanism and CTC to implement.
 
 本项目目前已经可以正常进行训练了。
 
@@ -20,7 +19,6 @@ This project uses Keras, TensorFlow based on deep convolutional neural network a
 $ cp -rf datalist/* dataset/
 ```
 
-目前可用的模型有24、25和251
 
 本项目开始训练请执行：
 ```shell
@@ -37,21 +35,20 @@ ASRT API服务器启动请执行：
 $ python3 asrserver.py
 ```
 
-如果要训练和使用模型251，请在代码中 `import SpeechModel` 的相应位置做修改。
 
 如果程序运行期间或使用中有什么问题，可以及时在issue中提出来，我将尽快做出答复。
 
-提问前可以先 [查看常见问题](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/issues) 
+
 
 ## Model 模型
 
 ### Speech Model 语音模型
 
-CNN + LSTM/GRU + CTC
+DFCNN
 
 * 关于下载已经训练好的模型的问题
 
-可以在Github本仓库下[releases](https://github.com/nl8590687/ASRT_SpeechRecognition/releases)里面的查看发布的各个版本软件的压缩包里获得完整源程序。
+
 
 ### Language Model 语言模型
 
@@ -111,14 +108,8 @@ ST-CMDS-20170001_1-OS.tar.gz
 
 如果提供的数据集链接无法打开和下载，请点击该链接 [OpenSLR](http://www.openslr.org)
 
-## Log
-日志
-
-链接：[进展日志](https://github.com/nl8590687/ASRT_SpeechRecognition/blob/master/log.md)
 
 ## Contributors 贡献者们
 @ZJUGuoShuai @williamchenwl
 
 @nl8590687 (repo owner)
-
-[打赏作者](https://github.com/nl8590687/ASRT_SpeechRecognition/wiki/donate)
