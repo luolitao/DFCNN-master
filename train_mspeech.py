@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-@author: nl8590687
+
 用于训练语音识别系统语音模型的程序
 
 """
@@ -16,7 +16,7 @@ from SpeechModel_DFCNN import ModelSpeech
 
 
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"] = "0, 1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 #进行配置，使用95%的GPU
 config = tf.ConfigProto(allow_soft_placement=True)
 #config = tf.ConfigProto()
@@ -51,7 +51,7 @@ else:
 ms = ModelSpeech(datapath)
 
 #ms.LoadModel(modelpath + 'm_DFCNN/speech_model_DFCNN_e_0_step_84000.model')
-ms.LoadModel(modelpath + 'm_dfcnn/speech_model_dfcnn_e_0_step_' + base_count +'.model')
-ms.TrainModel(datapath, epoch = 50, batch_size = 64, save_step = 1000)
+#ms.LoadModel(modelpath + 'speech_model_dfcnn_e_0_step_' + base_count +'.model')
+ms.TrainModel(datapath, epoch = 50, batch_size = 16, save_step = 1000)
 
 
